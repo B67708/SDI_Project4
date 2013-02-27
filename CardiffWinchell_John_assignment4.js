@@ -23,25 +23,25 @@
                 localCount = (endLocalNum - startLocalNum),
                 numberCount = (phoneNumber.length - (phoneNumber.lastIndexOf("-")+1));
                                
-            if(0 <= areaNum <= 999){areaNum = true}    //This decides if the area code is between 0 and 999
+            if(0 <= areaNum <= 999){areaNum = true}      //This decides if the area code is between 0 and 999
                 else areaNum = false;
                 
-            if(areaCount == 3){areaNum = true}          //This decides if the area code if 3 digits long
+            if(areaCount == 3){areaNum = true}           //This decides if the area code if 3 digits long
                 else areaNum = false;
                 
-            if(0 <= localNum <= 999){localNum = true}  //This decides if the second 3 numbers are between 0 and 999
+            if(0 <= localNum <= 999){localNum = true}    //This decides if the second 3 numbers are between 0 and 999
                 else localNum = false;
                     
-            if(localCount == 3){localNum = true}       //This decides if the second 3 numbers are 3 digits long
+            if(localCount == 3){localNum = true}         //This decides if the second 3 numbers are 3 digits long
                 else localNum = false;
                     
-            if(0 <= numberNum <= 9999){numberNum = true} //This decides if the last 4 are between 0 and 9999
+            if(0 <= numberNum <= 9999){numberNum = true} //This decides if the last 4 numbers are between 0 and 9999
                 else numberNum = false;
                     
             if(numberCount == 4){numberNum = true}       //This decides if the last 4 numbers are 4 digits long
                 else numberNum = false;
                 
-                if(areaNum && localNum && numberNum == true){     //This checks if all conditions are true or false
+                if(areaNum && localNum && numberNum == true){     //This checks to see if the conditions are true or false
                     check = true
                     
                     } else
@@ -96,7 +96,7 @@ var checkEmailAddress = function(){
 
 //Is the string a URL(Does it start with http:// or http://)
 
-//function to see if the url matches http:// or https://
+//function checks to see if the url matches http:// or https://
 var checkUrl = function(){
     
     var urlcheck= false;
@@ -111,6 +111,16 @@ var checkUrl = function(){
     return urlcheck;
     };
 
+// Number functions.
+
+// Format a number to use a specific number of decimal places, as for money: 2.1 to 2.10
+
+var decimalPlace = function(){
+    var moveDecimal = parseFloat(money).toFixed(2); //This moves decimal place
+    
+    return moveDecimal;                             //returns a string
+    
+};
 
 //String function outputs
 
@@ -130,5 +140,10 @@ var myEmailAddress = "Johnwinchell86@fullsail.edu";    //Variable for Email
 
 var url = "http://www.codecademy.com";                 //Variable for url
     console.log(checkUrl());                           //output for url
+    
+//Number function outputs.
+
+var money = 21.0;                                      //Variable for decimal move
+    console.log(decimalPlace());                       //Output for decimal move
 
 
