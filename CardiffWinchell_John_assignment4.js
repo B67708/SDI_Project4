@@ -94,14 +94,29 @@ var checkEmailAddress = function(){
             return email;           //returns boolean
 };
 
+//Is the string a URL(Does it start with http:// or http://)
 
+//function to see if the url matches http:// or https://
+var checkUrl = function(){
+    
+    var urlcheck= false;
+    
+    if(url.substring(0,7) == "http://"){      //check to see if url matchs http://
+        urlcheck = true
+    };
+     if (url.substring(0,8) == "https://"){   //check to see if url matchs https://
+        urlcheck = true};
+        
+     
+    return urlcheck;
+    };
 
 
 //String function outputs
 
     console.log("String function outputs");       
 
-// Does a string follow a pattern like a phone number output.
+// Does a string follow a pattern like a phone number output?
 
 var phoneNumber = "123-456-7890";                      //Variable for phone number
     console.log(checkPhoneNum());                      //Output for phone number
@@ -111,5 +126,9 @@ var phoneNumber = "123-456-7890";                      //Variable for phone numb
 var myEmailAddress = "Johnwinchell86@fullsail.edu";    //Variable for Email
     console.log(checkEmailAddress());                  //Output for Email
 
+//Is the string a URL(Does it start with http:// or http://)
+
+var url = "http://www.codecademy.com";                 //Variable for url
+    console.log(checkUrl());                           //output for url
 
 
