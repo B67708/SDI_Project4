@@ -130,8 +130,32 @@ var stringVersion = function(){
     return newVersion;                             //returns a Number.
 };
 
+//Array function.
 
-//String function outputs
+//Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
+var array = [4, 12, 23, 61, "Purple", false];      //Array that will be added.
+var addIt = function(numbersINArray) {
+    
+    var Sum = 0,                                   //Variables start at 0.
+        add = 0;
+        
+    for (i = 0; i < numbersInArray.length ; i++) {  //Runs for loop through the array.
+        add = parseFloat(numbersInArray[i]);
+        if (isNaN(add)) {
+            add = 0;
+        };       
+        Sum = Sum + add;                           //Adding the sum and total of array together.
+    };
+    return Sum;                                    //Returns number.
+};
+
+
+
+
+//Outputs.
+
+//String function outputs.
 
     console.log("String function outputs");       
 
@@ -145,14 +169,16 @@ var phoneNumber = "123-456-7890";                      //Variable for phone numb
 var myEmailAddress = "Johnwinchell86@fullsail.edu";    //Variable for Email.
     console.log(checkEmailAddress());                  //Output for Email.
 
-//Is the string a URL(Does it start with http:// or http://)
+//Is the string a URL(Does it start with http:// or http://).
 
 var url = "http://www.codecademy.com";                 //Variable for url.
     console.log(checkUrl());                           //output for url.
     
 //Number function outputs.
 
-// Format a number to use a specific number of decimal places
+    console.log("Number function outputs");
+
+// Format a number to use a specific number of decimal places.
 
 var amount = 21.0;                                      //Variable for decimal move.
     console.log(decimalPlace());                        //Output for decimal move.
@@ -161,4 +187,12 @@ var amount = 21.0;                                      //Variable for decimal m
 
 var stringNumber = "42";                                //Variable for string to number.
     console.log(stringVersion());                       //Output for string to number.
+
+//Array function Output
+
+    console.log ("Array function outputs");
     
+//Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
+var numbersInArray = [4, 12, 23, 61];                     //Variable for add array problem.
+console.log(addIt(array));                                //Output for add array problem.
