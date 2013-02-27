@@ -52,26 +52,64 @@
 };
 
 
+//Does the string follow a pattern like an email address?
 
+//Function to determine if the email address follows a pattern.        
+var checkEmailAddress = function(){
+    
+//These Variables are for determining the postion of @ and .
 
+    var endUser   = myEmailAddress.indexOf("@"),
+        startHost = myEmailAddress.indexOf("@")+1,
+        endHost   = myEmailAddress.lastIndexOf("."),
+        startTLD  = myEmailAddress.lastIndexOf(".")+1,
+        endTLD    = myEmailAddress.length;
+    
+//These variables take the data from the last variables and determine the length of the address
 
-
-
-
-
-
-
-
-
+    var emailUser = myEmailAddress.substring(0,endUser),
+        emailHost = myEmailAddress.substring(startHost,endHost),
+        emailGtld = myEmailAddress.substring(startTLD,endTLD),
+        emailUser = (endUser),
+        emailHost = (endHost - startHost),
+        emailGtld = (myEmailAddress.length - (myEmailAddress.lastIndexOf(".")+1));
+        
+        
+        if(emailUser >1){emailUser = true}          //This checks to see if the username is greater than 1 charater
+            else emailUser = false;
+        
+        if(emailHost >1){emailHost = true}          //This checks to see if the host name is great than 1 character
+            else emailHost = false;
+            
+        if(emailGtld == 3){emailGtld = true}        //This checks to see if the gTLD is equal to 3 charaters
+            else emailGtld = false;
+        
+    
+        
+            if(emailUser && emailHost && emailGtld == true){        //This Checks to see if address if formatted to the pattern
+                email = true
+            } else
+                email = false;
+                
+            return email;           //returns boolean
+};
 
 
 
 
 //String function outputs
 
-console.log("String function outputs");       
+    console.log("String function outputs");       
 
 // Does a string follow a pattern like a phone number output.
 
-var phoneNumber = "123-456-7890";            //Variable for phone number
-console.log(checkPhoneNum());             //Output for phone number
+var phoneNumber = "123-456-7890";                      //Variable for phone number
+    console.log(checkPhoneNum());                      //Output for phone number
+
+//Does the string follow a pattern like an email address?
+
+var myEmailAddress = "Johnwinchell86@fullsail.edu";    //Variable for Email
+    console.log(checkEmailAddress());                  //Output for Email
+
+
+
